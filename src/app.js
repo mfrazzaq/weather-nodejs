@@ -3,6 +3,8 @@ const express = require('express');
 const hbs = require('hbs');
 const mapBox = require('./utils/geocoding');
 const weatherStack = require('./utils/weatherStack');
+const port = process.env.PORT || 3000;
+
 
 //Paths
 const indexPath = path.join(__dirname, '../public');
@@ -84,7 +86,7 @@ app.get('*', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log("App is running on port 3000");
+app.listen(port, () => {
+    console.log("App is running on port " + port.toString());
 });
 
